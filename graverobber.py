@@ -38,8 +38,8 @@ class Plane(list):
                          key=(lambda item: item.position()[axis]))
         left_limiter = get_closest(current_pos, 0, max, operator.lt)
         right_limiter = get_closest(current_pos, 0, min, operator.gt)
-        up_limiter = get_closest(current_pos, 1, min, operator.lt)
-        down_limiter = get_closest(current_pos, 1, max, operator.gt)
+        up_limiter = get_closest(current_pos, 1, max, operator.lt)
+        down_limiter = get_closest(current_pos, 1, min, operator.gt)
         return (current_pos[0] - left_limiter.position()[0] + 1,
                 right_limiter.position() - current_pos[0] + 1,
                 current_pos[1] - up_limiter.position()[1] + 1,
